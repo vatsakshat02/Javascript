@@ -55,3 +55,20 @@ console.log(person)
 //json is omething that we send to server suppose you have to send person as a json file for that you have to 
 const toJson = JSON.stringify(person);
 console.log(toJson)
+
+//for loop
+for(let i = 0; i<10; i++){
+    console.log(`for loop number: ${i}`)
+}
+
+//while loop
+let i = 0
+while(i<10){
+    console.log(`while loop number: ${i}`);
+    i++;
+}
+
+//to iterate through an array
+for(let t of fruits){
+        console.log(t);
+}
