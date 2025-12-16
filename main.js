@@ -72,3 +72,31 @@ while(i<10){
 for(let t of fruits){
         console.log(t);
 }
+
+//higher order iterations forEach, map, filter
+const todos = [
+    {
+        id: 1,
+        name: 'john',
+
+    },
+    {
+        id: 2,
+        name: 'simran'
+    },
+    {
+        id: 3,
+        name: 'zeeku'
+    }
+]
+//forEach 
+todos.forEach(function(todo){
+        console.log(todo.id)
+})
+
+//map 
+const Todoss =  todos.map(function(todo){
+            return (todo.name);
+})
+
+console.log(Todoss);
