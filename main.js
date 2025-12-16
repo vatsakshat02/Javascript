@@ -30,3 +30,28 @@ fruits.push('nimbu paani');
 fruits.unshift("number one in the game");
 console.log(fruits);
 console.log(fruits.indexOf('oranges'));
+
+//object literals are literary key value pairs like dictionary 
+const person = {
+    firstname : 'akshat',
+    lastname: 'vats',
+    age : 21,
+    hobbies:['football', 'music'],
+    address: {
+        street : 'number 1'
+
+    }
+}
+
+console.log(person)
+console.log(person.firstname, person.lastname)
+console.log(person.hobbies[1])
+console.log(person.address.street)
+
+// to add something
+person.email = 'abc@gmail.com'
+console.log(person)
+
+//json is omething that we send to server suppose you have to send person as a json file for that you have to 
+const toJson = JSON.stringify(person);
+console.log(toJson)
