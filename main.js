@@ -15,3 +15,18 @@
  //String manipulation
  const s ="akshat vats"
  console.log(s.length);
+
+ console.log(s.substring(0,5));
+
+ console.log(s.split('a'));
+
+
+ //arrays - variables that hold multiple values (it can have multiple values)
+
+const fruits = ['apple', 'oranges', 'grapes'];
+fruits[3] = 'watermelon';
+console.log(fruits);
+fruits.push('nimbu paani');
+fruits.unshift("number one in the game");
+console.log(fruits);
+console.log(fruits.indexOf('oranges'));
