@@ -100,3 +100,31 @@ const Todoss =  todos.map(function(todo){
 })
 
 console.log(Todoss);
+
+// == just matches value not datatypes and === matches the datatypes as well
+
+//if and else
+const x = 4
+const y = 5
+if(x>2 || y<6){
+    console.log('yippiekayeee')
+}
+else{
+    console.log('sad')
+}
+
+//ternary operator
+const a = 11
+ const color  = a>10?'red':'blue';
+ console.log(color);
+
+ //functions 
+ function Addnums(num1,num2){
+    return num1 + num2
+ }
+
+ console.log(Addnums(5,6))
+
+ //arrow functions 
+ const addNums = (num1 = 5) => num1+5;
+ console.log(addNums(12))
