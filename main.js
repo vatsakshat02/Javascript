@@ -128,3 +128,14 @@ const a = 11
  //arrow functions 
  const addNums = (num1 = 5) => num1+5;
  console.log(addNums(12))
+
+ //object oriented Programming
+function Person(firstname,lastname,dob){
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.dob = new Date(dob);
+}
+
+//instantiate object
+const person1 = new Person('akshat', 'vats', '02-09-20043')
+console.log(person1.dob)
