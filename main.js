@@ -136,6 +136,46 @@ function Person(firstname,lastname,dob){
     this.dob = new Date(dob);
 }
 
+//when you do console.log(person1) you will see everything above now suppose you have to hide some functions fdr taht we
+//put them in prototype section
+
+//prototype
+Person.prototype.getBirthyear = function(){
+    return this.dob.getFullYear();
+}
+Person.prototype.getFullname = function(){
+    return `${this.firstname} ${this.lastname}`
+}
+
 //instantiate object
-const person1 = new Person('akshat', 'vats', '02-09-20043')
+const person1 = new Person('akshat', 'vats', '02-09-2004')
+const person2 = new Person('Riya', 'Arora', '11-11-2003')
 console.log(person1.dob)
+console.log(person2)
+
+//if you check it will not show in console but in the prototype section 
+console.log(person1.getBirthyear());
+
+//all of this can be done using classes let me show you
+class Apple{
+    constructor(firstname,lastname,dob){
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dob = new Date(dob);
+    }
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+    getFullName(){
+        return `${this.firstname} ${this.lastname}`
+    }
+}
+
+//creating objects
+const App = new Apple('akshat', 'vats', '02-09-2004');
+console.log(App)
+console.log(App.getFullName());
+
+//classes are more organised 
+
+
