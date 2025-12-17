@@ -178,4 +178,38 @@ console.log(App.getFullName());
 
 //classes are more organised 
 
+//Dom (document object model)
+//Now for example all these alert and other function comes under window function which is the parent of browser
+//in window function we have dom which means our document and here we can pick different parts of our html code
+//for example
 
+//single elment collector
+ const form = document.getElementById('my-form');
+ console.log(form);
+ const forms = document.querySelector('h1'); 
+ console.log(forms);
+ //even of there are multiple h1 it will still select the first one as it is a single element selector
+
+
+ //multiple element collector
+//this returns nodelist and you can see that it is like array and you can perform operations on it like you do on arrays
+ const items = document.querySelectorAll('.item'); 
+ items.forEach((item)=> console.log(item));//helps you to iterate through it 
+
+
+ //manipulating Dom : basically you can pick a section and manipulate it like below
+ const ul = document.querySelector('.items');
+ ul.firstElementChild.remove(); //removes the first item like from the list
+ ul.lastElementChild.textContent = 'hello' //changes text content
+ ul.children[0].innerHTML = '<h1>this is a heading</h1>' // youi can also change the tml dynamically
+
+ const btn = document.querySelector('.btn');
+ btn.style.background = 'red';
+
+ // events
+  btn.addEventListener('click', (e)=> {
+    e.preventDefault(); // doesnt submit the form
+    document.querySelector('#my-form').style.background = '#ccc';
+    document.querySelector('body').classList.add('bg-dark');
+    document.querySelector('.items').lastElementChild.innerHTML = '<h1>hello</h1>';
+  })
