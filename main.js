@@ -198,18 +198,46 @@ console.log(App.getFullName());
 
 
  //manipulating Dom : basically you can pick a section and manipulate it like below
- const ul = document.querySelector('.items');
- ul.firstElementChild.remove(); //removes the first item like from the list
- ul.lastElementChild.textContent = 'hello' //changes text content
- ul.children[0].innerHTML = '<h1>this is a heading</h1>' // youi can also change the tml dynamically
 
- const btn = document.querySelector('.btn');
- btn.style.background = 'red';
+//  const ul = document.querySelector('.items');
+//  ul.firstElementChild.remove(); //removes the first item like from the list
+//  ul.lastElementChild.textContent = 'hello' //changes text content
+//  ul.children[0].innerHTML = '<h1>this is a heading</h1>' // youi can also change the tml dynamically
 
- // events
-  btn.addEventListener('click', (e)=> {
-    e.preventDefault(); // doesnt submit the form
-    document.querySelector('#my-form').style.background = '#ccc';
-    document.querySelector('body').classList.add('bg-dark');
-    document.querySelector('.items').lastElementChild.innerHTML = '<h1>hello</h1>';
-  })
+//  const btn = document.querySelector('.btn');
+//  btn.style.background = 'red';
+
+//  // events
+//   btn.addEventListener('click', (e)=> {
+//     e.preventDefault(); // doesnt submit the form
+//     document.querySelector('#my-form').style.background = '#ccc';
+//     document.querySelector('body').classList.add('bg-dark');
+//     document.querySelector('.items').lastElementChild.innerHTML = '<h1>hello</h1>';
+//   })
+
+const myForm = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userlist = document.querySelector('#users');
+
+myForm.addEventListener('submit', onSubmit);
+
+function onSubmit(e){
+    e.preventDefault();
+
+    if(nameInput.value === '' || emailInput.value === ''){
+        msg.classList.add('error');
+        msg.innerHTML = 'please enter all fields';
+        setTimeout(() => msg.remove(),3000)
+    }
+    else{
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value} ${emailInput.value}`));
+        userlist.appendChild(li);
+
+        //clear fields
+        nameInput.value = '';
+        emailInput.value = '';
+    }
+}
